@@ -1,0 +1,46 @@
+import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+
+const phrasePairs = [
+  { english: "Good morning", spanish: "Buenos días" },
+  { english: "How are you?", spanish: "¿Cómo estás?" },
+  { english: "Nice to meet you", spanish: "Mucho gusto" },
+  { english: "Thank you very much", spanish: "Muchas gracias" },
+  { english: "You're welcome", spanish: "De nada" },
+];
+
+const TranslationPairsWebsite = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 p-8">
+      <div className="max-w-3xl mx-auto">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-blue-900 mb-4">English-Spanish Phrases</h1>
+          <p className="text-lg text-blue-700">Learn common phrases in both languages</p>
+        </header>
+
+        <div className="grid gap-4">
+          {phrasePairs.map((pair, index) => (
+            <Card key={index} className="hover:shadow-lg transition-shadow duration-200">
+              <CardContent className="grid md:grid-cols-2 gap-4 p-6">
+                <div className="flex flex-col">
+                  <span className="text-sm font-medium text-blue-600 mb-1">English</span>
+                  <span className="text-xl">{pair.english}</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-sm font-medium text-green-600 mb-1">Spanish</span>
+                  <span className="text-xl">{pair.spanish}</span>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <footer className="mt-12 text-center text-gray-600">
+          <p>Created for language learners</p>
+        </footer>
+      </div>
+    </div>
+  );
+};
+
+export default TranslationPairsWebsite;
